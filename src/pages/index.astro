@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro'
 import MainTitle from '../components/MainTitle.astro'
 import MainImage from '../components/MainImage.astro'
 import InfoSection from '../components/InfoSection.astro'
-import Infografias from '../components/infografias.astro'
 import Card from '../components/Card.astro'
 
 const allPost = await Astro.glob('./blog/*.md')
@@ -19,10 +18,15 @@ const allPost = await Astro.glob('./blog/*.md')
     </div>
   </header>
   <InfoSection />
-  <Infografias>
-   {allPost.map(post =>(
-    <Card title={post.frontmatter.title}  desc={post.frontmatter.description} url={post.url}/>
-   ))}
-  </Infografias>
+  <main>
+    {
+      allPost.map((post) => (
+        <Card
+          title={post.frontmatter.title}
+          desc={post.frontmatter.description}
+          url={post.url}
+        />
+      ))
+    }
+  </main>
 </Layout>
-
