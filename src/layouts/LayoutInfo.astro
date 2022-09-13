@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+import ViewInfo from '../components/ViewInfo.astro'
+
+const {
+  frontmatter: { title, link, filepath },
+} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+    />
+  </head>
+  <body>
+    <div class='container__view'>
+      <h2>{title}</h2>
+      <nav>
+        <a class='btn' href='/'
+          ><i class='fa-solid fa-arrow-left'></i>Regresar</a
+        >
+        <a class='btn' href={filepath} download={title}
+          ><i class='fa-solid fa-download'></i>Download</a
+        >
+        <a class='btn' href={filepath} target='_blank'>
+          <i class='fa-solid fa-location-arrow'></i>
+          Abrir
+        </a>
+      </nav>
+      <ViewInfo link={link} />
+      <slot />
+    </div>
+  </body>
+</html>

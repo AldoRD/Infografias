@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-color: linear-gradient(45deg, #4e54c8, #8f94fb);
+  --bg-color-2: #d9dbff;
+  --color-1: #4e54c8;
+  --color-white: #fff;
+  --color-black: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0px;
+  background: var(--bg-color);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.wrapper .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  padding: 20px;
+}
+
+.wrapper .container svg {
+  width: 95%;
+}
+
+.wrapper .svg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+}
+
+.wrapper .svg svg {
+  height: 100%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 100vh;
+  padding: 50px 20px;
+  gap: 50px;
+}
+
+section svg {
+  width: 40%;
+}
+
+section .information {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 20px;
+  gap: 50px;
+}
+
+section .information h2 {
+  font-size: 34px;
+}
+
+section .information p {
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 500;
+}
+
+main {
+  width: 100%;
+  height: fit-content;
+  padding: 50px 20px;
+  display: grid;
+  gap: 3rem;
+  grid-auto-rows: 26rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  background-color: var(--bg-color-2);
+}
+
+main .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7%;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: var(--color-white);
+  border-top: 6px solid var(--color-1);
+  box-shadow: 10px 10px 0px rgb(0, 0, 0, 0.8);
+
+  transition: all 0.3s ease-in-out;
+}
+
+main .card .card__title {
+  text-align: center;
+  font-size: clamp(24px, 32px, 48px);
+  line-height: 48px;
+  font-weight: 800;
+}
+
+main .card .card__body {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgb(0, 0, 0, 0.6);
+}
+
+main .card .card__btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+  background: var(--bg-color);
+
+  transition: all 0.2s ease-in-out;
+}
+
+main .card .card__btn:hover {
+  transform: scale(1.1);
+}
+
+main .card .card__btn:active {
+  transform: translateY(5px);
+}
+
+main .card:hover {
+  transform: translateY(-10px);
+}
+
+.container__view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--color-black);
+  height: fit-content;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 0px;
+  gap: 15px;
+}
+
+.container__view h2 {
+  font-size: 28px;
+  color: var(--color-white);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--bg-color);
+  /* padding: 10px 50px; */
+  padding: 5px 10px;
+  color: var(--color-white);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-weight: 600;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.btn:hover {
+  transform: translateY(5px);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.container__view .infografia {
+  background-color: #4e54c8;
+  width: 90%;
+  height: 80vh;
+}
+
+.infografia .info__container {
+  width: 100%;
+  height: 100%;
+}
+
+.infografia .info__container .pdf {
+  width: 100%;
+  height: 100%;
+}
+
+.infografia .info__container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+  .wrapper {
+    height: 90vh;
+  }
+
+  section {
+    padding: 50px 5%;
+  }
+
+  section .information p {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@media only screen and (min-width: 748px) {
+  .wrapper {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .wrapper .container,
+  .wrapper .svg {
+    height: 100%;
+  }
+
+  .wrapper .container {
+    align-items: end;
+    justify-content: flex-start;
+    padding: 40px;
+  }
+
+  .wrapper .container svg {
+    width: 60%;
+  }
+
+  .wrapper .svg {
+    position: absolute;
+    align-items: end;
+    justify-content: end;
+    padding: 20px;
+  }
+
+  main {
+    padding: 80px;
+  }
+
+  .container__view h2 {
+    font-size: 36px;
+    color: var(--color-white);
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  .btn {
+    padding: 10px 50px;
+    font-size: 18px;
+  }
+  .container__view .infografia {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper .container svg {
+    width: 55%;
+  }
+
+  section {
+    padding: 100px 10%;
+  }
+
+  section .information h2 {
+    font-size: 52px;
+  }
+
+  section .information p {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  main {
+    padding: 80px;
+  }
+
+  .btn {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+}
+
+@media only screen and (min-width: 1536px) {
+  nav {
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 10px 50px;
+    font-size: 28px;
+  }
+}
