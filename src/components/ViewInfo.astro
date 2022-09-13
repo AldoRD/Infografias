@@ -1,10 +1,11 @@
 ---
-const { link } = Astro.props
+const { link, path } = Astro.props
 ---
 
 <div class='infografia'>
   <div class='info__container'>
-    <iframe src={link} allowfullscreen='allowfullscreen' allow='fullscreen'>
-    </iframe>
+    <!-- <iframe src={link} allowfullscreen='allowfullscreen' allow='fullscreen'>
+    </iframe> -->
+    <embed class='info' src={path + '#toolbar=0&#view=FitH'} />
   </div>
 </div>
