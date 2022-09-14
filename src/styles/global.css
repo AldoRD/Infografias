@@ -213,7 +213,7 @@ nav {
 }
 
 .btn:hover {
-  transform: translateY(5px);
+  transform: translateY(-5px);
 }
 
 .btn:active {
@@ -253,6 +253,12 @@ nav {
   color: var(--color-white);
   top: 10px;
   left: 15px;
+}
+
+.container__view .ad {
+  background-color: gray;
+  width: 60%;
+  height: 100px;
 }
 
 .infografia .info__container {
