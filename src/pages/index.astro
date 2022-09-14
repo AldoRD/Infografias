@@ -9,7 +9,7 @@ const allPost = await Astro.glob('./blog/*.md')
 ---
 
 <Layout title='Tus Infografías.'>
-  <header class='wrapper'>
+  <header class='wrapper parallax'>
     <div class='container'>
       <MainTitle />
     </div>
@@ -18,7 +18,7 @@ const allPost = await Astro.glob('./blog/*.md')
     </div>
   </header>
   <InfoSection />
-  <main>
+  <main id='cards'>
     {
       allPost.map((post) => (
         <Card
@@ -30,3 +30,28 @@ const allPost = await Astro.glob('./blog/*.md')
     }
   </main>
 </Layout>
+
+<script>
+  import * as basicScroll from 'basicscroll'
+
+  let parallax_sections = document.querySelectorAll('.parallax')
+
+  console.log(parallax_sections)
+  for (let parallax_section of parallax_sections) {
+    let _from = parallax_section.getAttribute('data-from') || '0px'
+    let _to = parallax_section.getAttribute('data-to') || '700px'
+    let instance = basicScroll.create({
+      elem: parallax_section,
+      from: 'top-top',
+      to: 'bottom-top',
+      direct: true,
+      props: {
+        '--ty': {
+          from: _from,
+          to: _to,
+        },
+      },
+    })
+    instance.start()
+  }
+</script>

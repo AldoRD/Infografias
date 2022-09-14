@@ -17,6 +17,10 @@
   transform-box: fill-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a,
 a:visited,
 a:hover {
@@ -34,6 +38,7 @@ a:hover {
   padding: 60px 0px;
   background: var(--bg-color);
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
 }
 
 .wrapper .container {
@@ -47,6 +52,9 @@ a:hover {
 
 .wrapper .container svg {
   width: 95%;
+  z-index: 10000;
+
+  transform: translateY(calc((var(--ty) * 0.6)));
 }
 
 .wrapper .svg {
@@ -61,9 +69,12 @@ a:hover {
 
 .wrapper .svg svg {
   height: 100%;
+
+  transform: translateY(calc((var(--ty) * 1.2)));
 }
 
 section {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,10 +84,14 @@ section {
   height: 100vh;
   padding: 50px 20px;
   gap: 50px;
+  overflow: hidden;
 }
 
 section svg {
   width: 40%;
+  z-index: 80;
+
+  transform: translateY(calc((var(--ty) * 0.7)));
 }
 
 section .information {
@@ -91,6 +106,9 @@ section .information {
 
 section .information h2 {
   font-size: 34px;
+  z-index: 50;
+
+  transform: translateY(calc((var(--ty) * 0.9)));
 }
 
 section .information p {
@@ -98,6 +116,9 @@ section .information p {
   line-height: 28px;
   text-align: center;
   font-weight: 500;
+  z-index: 60;
+
+  transform: translateY(calc((var(--ty) * 0.8)));
 }
 
 main {
@@ -167,40 +188,21 @@ main .card:hover {
   transform: translateY(-10px);
 }
 
-.container__view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: var(--color-black);
-  height: fit-content;
-  width: 100%;
-  height: 100vh;
-  padding: 20px 0px;
-  gap: 15px;
-}
-
-.container__view h2 {
-  font-size: 28px;
-  color: var(--color-white);
-}
-
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .btn {
   display: inline-block;
   background: var(--bg-color);
-  /* padding: 10px 50px; */
   padding: 5px 10px;
   color: var(--color-white);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 
   transition: all 0.2s ease-in-out;
@@ -218,18 +220,42 @@ nav {
   transform: scale(0.9);
 }
 
-.container__view .infografia {
-  background-color: #4e54c8;
+.container__view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--color-black);
+  height: fit-content;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  padding: 20px 0px;
+  gap: 30px;
+}
+
+.container__view h2 {
+  font-size: 28px;
+  color: var(--color-white);
+}
+
+.container__view .infografia {
+  position: relative;
+  background-color: #4e54c8;
+  width: 90%;
+  height: 50%;
+}
+
+.container__view .infografia h4 {
+  position: absolute;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-white);
+  top: 10px;
+  left: 15px;
 }
 
 .infografia .info__container {
-  width: 100%;
-  height: 100%;
-}
-
-.infografia .info__container .pdf {
   width: 100%;
   height: 100%;
 }
@@ -309,6 +335,11 @@ nav {
     color: var(--color-white);
   }
 
+  .container__view .infografia {
+    width: 50%;
+    height: 60%;
+  }
+
   nav {
     gap: 15px;
   }
@@ -316,9 +347,6 @@ nav {
   .btn {
     padding: 10px 50px;
     font-size: 18px;
-  }
-  .container__view .infografia {
-    width: 80%;
   }
 }
 
@@ -359,6 +387,6 @@ nav {
 
   .btn {
     padding: 10px 50px;
-    font-size: 28px;
+    font-size: 26px;
   }
 }
