@@ -36,7 +36,6 @@ const allPost = await Astro.glob('./blog/*.md')
 
   let parallax_sections = document.querySelectorAll('.parallax')
 
-  console.log(parallax_sections)
   for (let parallax_section of parallax_sections) {
     let _from = parallax_section.getAttribute('data-from') || '0px'
     let _to = parallax_section.getAttribute('data-to') || '700px'

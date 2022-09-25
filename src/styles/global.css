@@ -4,6 +4,7 @@
   --bg-color: linear-gradient(45deg, #4e54c8, #8f94fb);
   --bg-color-2: #d9dbff;
   --color-1: #4e54c8;
+  --color-2: #8f94fb;
   --color-white: #fff;
   --color-black: #222;
 }
@@ -51,7 +52,7 @@ a:hover {
 }
 
 .wrapper .container svg {
-  width: 95%;
+  width: 100%;
   z-index: 10000;
 
   transform: translateY(calc((var(--ty) * 0.6)));
@@ -82,16 +83,8 @@ section {
   background-color: var(--color-white);
   width: 100%;
   height: 100vh;
-  padding: 50px 20px;
-  gap: 50px;
   overflow: hidden;
-}
-
-section svg {
-  width: 40%;
-  z-index: 80;
-
-  transform: translateY(calc((var(--ty) * 0.7)));
+  padding: 30px;
 }
 
 section .information {
@@ -100,34 +93,59 @@ section .information {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0px 20px;
-  gap: 50px;
+  gap: 25px;
 }
 
 section .information h2 {
-  font-size: 34px;
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #000046 0%,
+    #4e54c8 29%,
+    #8f94fb 67%,
+    #1cb5e0 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+  display: inline-block;
+
   z-index: 50;
 
-  transform: translateY(calc((var(--ty) * 0.9)));
+  transform: translateY(calc((var(--ty) * 1)));
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
 
 section .information p {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   z-index: 60;
 
-  transform: translateY(calc((var(--ty) * 0.8)));
+  transform: translateY(calc((var(--ty) * 1)));
 }
 
 main {
   width: 100%;
   height: fit-content;
-  padding: 50px 20px;
+  padding: 50px 15px;
   display: grid;
   gap: 3rem;
-  grid-auto-rows: 26rem;
+  grid-auto-rows: 24rem;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
   background-color: var(--bg-color-2);
 }
@@ -160,7 +178,7 @@ main .card .card__body {
   font-size: 18px;
   text-align: center;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 1.5rem;
   color: rgb(0, 0, 0, 0.6);
 }
 
@@ -169,7 +187,7 @@ main .card .card__btn {
   display: inline-block;
   padding: 5px 40px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 1.5rem;
   color: #fff;
   background: var(--bg-color);
 
@@ -202,7 +220,7 @@ nav {
   color: var(--color-white);
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
 
   transition: all 0.2s ease-in-out;
@@ -297,16 +315,19 @@ nav {
   }
 
   section {
-    padding: 50px 5%;
+    padding: 75px;
+  }
+
+  section .information h2 {
+    font-size: 2.2rem;
   }
 
   section .information p {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
   }
 }
 
-@media only screen and (min-width: 748px) {
+@media only screen and (min-width: 768px) {
   .wrapper {
     height: 100vh;
     padding: 0;
@@ -360,24 +381,23 @@ nav {
     padding: 10px 50px;
     font-size: 18px;
   }
+
+  section {
+    padding: 100px;
+  }
+
+  section .information {
+    gap: 50px;
+  }
+
+  section .information h2 {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .wrapper .container svg {
     width: 55%;
-  }
-
-  section {
-    padding: 100px 10%;
-  }
-
-  section .information h2 {
-    font-size: 52px;
-  }
-
-  section .information p {
-    font-size: 32px;
-    line-height: 40px;
   }
 
   main {
@@ -390,6 +410,21 @@ nav {
 }
 
 @media only screen and (min-width: 1280px) {
+  section {
+    padding: 150px;
+  }
+
+  section .information {
+    gap: 75px;
+  }
+
+  section .information h2 {
+    font-size: 3rem;
+  }
+
+  section .information p {
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1536px) {
@@ -400,5 +435,13 @@ nav {
   .btn {
     padding: 10px 50px;
     font-size: 26px;
+  }
+
+  section .information h2 {
+    font-size: 3.5rem;
+  }
+
+  section .information p {
+    font-size: 2.5rem;
   }
 }
