@@ -24,7 +24,7 @@ const {
     <div class='container__view'>
       <h2>{title}</h2>
       <nav>
-        <a class='btn' href='/'
+        <a id='go-back' class='btn'
           ><i class='fa-solid fa-arrow-left'></i>Regresar</a
         >
         <a class='btn' href={filepath} download={title}
@@ -33,5 +33,13 @@ const {
       </nav>
       <ViewInfo link={link} path={filepath} />
     </div>
+    <script>
+      const back = document.getElementById('go-back')
+      if (back) {
+        back.addEventListener('click', () => {
+          history.back()
+        })
+      }
+    </script>
   </body>
 </html>
