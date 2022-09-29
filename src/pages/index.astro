@@ -4,12 +4,14 @@ import MainTitle from '../components/MainTitle.astro'
 import MainImage from '../components/MainImage.astro'
 import InfoSection from '../components/InfoSection.astro'
 import Card from '../components/Card.astro'
+import Links from '../components/Links.astro'
 
 const allPost = await Astro.glob('./blog/*.md')
 ---
 
 <Layout title='Tus Infografías.'>
-  <header class='wrapper parallax'>
+  <Links />
+  <header id='home' class='wrapper'>
     <div class='container'>
       <MainTitle />
     </div>
@@ -32,25 +34,20 @@ const allPost = await Astro.glob('./blog/*.md')
 </Layout>
 
 <script>
-  import * as basicScroll from 'basicscroll'
+  import Rellax from 'rellax'
+  import ScrollReveal from 'scrollreveal'
 
-  let parallax_sections = document.querySelectorAll('.parallax')
+  let titleParallax = new Rellax('.landing')
+  let bodyParallax = new Rellax('.information', {
+    wrapper: '.parallax',
+    center: true,
+    relativeToWrapper: true,
+  })
 
-  for (let parallax_section of parallax_sections) {
-    let _from = parallax_section.getAttribute('data-from') || '0px'
-    let _to = parallax_section.getAttribute('data-to') || '700px'
-    let instance = basicScroll.create({
-      elem: parallax_section,
-      from: 'top-top',
-      to: 'bottom-top',
-      direct: true,
-      props: {
-        '--ty': {
-          from: _from,
-          to: _to,
-        },
-      },
-    })
-    instance.start()
-  }
+  window.addEventListener('scroll', function () {
+    bodyParallax.refresh()
+    titleParallax.refresh()
+  })
+
+  ScrollReveal().reveal('.card', { delay: 250 })
 </script>

@@ -31,7 +31,7 @@ a:hover {
 .wrapper {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,9 +53,7 @@ a:hover {
 
 .wrapper .container svg {
   width: 100%;
-  z-index: 10000;
-
-  transform: translateY(calc((var(--ty) * 0.6)));
+  z-index: 1000;
 }
 
 .wrapper .svg {
@@ -70,8 +68,6 @@ a:hover {
 
 .wrapper .svg svg {
   height: 100%;
-
-  transform: translateY(calc((var(--ty) * 1.2)));
 }
 
 section {
@@ -119,7 +115,6 @@ section .information h2 {
   z-index: 50;
 
   animation: shine 3s linear infinite;
-  transform: translateY(calc((var(--ty) * 1)));
 }
 
 @keyframes shine {
@@ -133,8 +128,6 @@ section .information p {
   text-align: center;
   font-weight: 400;
   z-index: 60;
-
-  transform: translateY(calc((var(--ty) * 1)));
 }
 
 main {
@@ -250,6 +243,7 @@ nav {
 }
 
 .container__view h2 {
+  text-align: center;
   font-size: 28px;
   color: var(--color-white);
 }
@@ -269,14 +263,6 @@ nav {
   color: var(--color-white);
   top: 10px;
   left: 15px;
-}
-
-.container__view .ad {
-  display: grid;
-  place-content: center;
-  background-color: gray;
-  width: 90%;
-  height: 100px;
 }
 
 .infografia .info__container {
@@ -308,10 +294,6 @@ nav {
 }
 
 @media only screen and (min-width: 640px) {
-  .wrapper {
-    height: 90vh;
-  }
-
   section {
     padding: 75px;
   }
@@ -359,16 +341,11 @@ nav {
 
   .container__view h2 {
     font-size: 36px;
-    color: var(--color-white);
   }
 
   .container__view .infografia {
-    width: 50%;
-    height: 60%;
-  }
-
-  .container__view .ad {
-    width: 50%;
+    width: 75%;
+    height: 65%;
   }
 
   nav {
@@ -376,8 +353,8 @@ nav {
   }
 
   .btn {
-    padding: 10px 50px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 24px;
   }
 
   section {
@@ -402,8 +379,12 @@ nav {
     padding: 80px;
   }
 
+  .container__view h2 {
+    font-size: 2.75rem;
+  }
+
   .btn {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 
@@ -428,11 +409,6 @@ nav {
 @media only screen and (min-width: 1536px) {
   nav {
     gap: 20px;
-  }
-
-  .btn {
-    padding: 10px 50px;
-    font-size: 26px;
   }
 
   section .information h2 {
