@@ -15,7 +15,6 @@
     "@astrojs/sitemap": "^1.0.0",
     "animejs": "^3.2.1",
     "astro": "^1.2.1",
-    "basicscroll": "^3.0.4",
     "rellax": "^1.12.1",
     "scrollreveal": "^4.0.9"
   }
